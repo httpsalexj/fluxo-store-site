@@ -1,13 +1,11 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { existsSync, statSync } from "node:fs";
-import { basename, dirname, extname, join, normalize } from "node:path";
+import { basename, extname, join, normalize } from "node:path";
 import { createHmac, randomBytes, randomUUID, timingSafeEqual } from "node:crypto";
 import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
 import { getStore } from "@netlify/blobs";
 
 const ROOT = process.cwd();
-const FUNCTION_DIR = dirname(fileURLToPath(import.meta.url));
 const IS_NETLIFY = Boolean(process.env.NETLIFY || process.env.CONTEXT || process.env.URL);
 loadEnv();
 
@@ -252,14 +250,10 @@ function uploadsStore() {
   return getStore("fluxostore-uploads");
 }
 
-async function readSeedJson(key, fallback = []) {
-  try {
-    const raw = await readFile(join(FUNCTION_DIR, "seed", key), "utf8");
-    const data = JSON.parse(raw);
-    return Array.isArray(data) ? data : fallback;
-  } catch {
-    return fallback;
-  }
+async function readSeedJson(_key, fallback = []) {
+  // No Netlify, evitar depender de caminho físico da function.
+  // Os dados reais ficam no Netlify Blobs; se ainda não existir nada salvo, usamos o fallback.
+  return fallback;
 }
 
 async function readJsonFile(path, fallback = []) {
