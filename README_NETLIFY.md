@@ -69,3 +69,15 @@ O segredo precisa ser igual nos dois projetos:
 DELIVERY_BOT_API_SECRET=...
 BOT_API_SECRET=...
 ```
+
+
+## Corrigir erro do Netlify Blobs
+
+Se aparecer: `The environment has not been configured to use Netlify Blobs`, adicione no Netlify:
+
+```env
+NETLIFY_BLOBS_SITE_ID=SEU_PROJECT_ID_DO_NETLIFY
+NETLIFY_BLOBS_TOKEN=SEU_PERSONAL_ACCESS_TOKEN_DO_NETLIFY
+```
+
+O `NETLIFY_BLOBS_SITE_ID` é o Project ID do projeto no Netlify. O token é criado nas configurações da sua conta Netlify em Personal Access Tokens. Depois de adicionar, faça novo deploy.

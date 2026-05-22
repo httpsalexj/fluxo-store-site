@@ -242,12 +242,21 @@ async function isDiscordAdmin(userId) {
   return { ok: true };
 }
 
+function blobStore(name) {
+  // Em alguns deploys o Netlify não injeta automaticamente o contexto do Blobs.
+  // Quando isso acontecer, preencha NETLIFY_BLOBS_SITE_ID e NETLIFY_BLOBS_TOKEN no painel do Netlify.
+  const siteID = process.env.NETLIFY_BLOBS_SITE_ID || process.env.SITE_ID || process.env.NETLIFY_SITE_ID || "";
+  const token = process.env.NETLIFY_BLOBS_TOKEN || process.env.NETLIFY_AUTH_TOKEN || "";
+  if (siteID && token) return getStore({ name, siteID, token });
+  return getStore(name);
+}
+
 function dataStore() {
-  return getStore("fluxostore-data");
+  return blobStore("fluxostore-data");
 }
 
 function uploadsStore() {
-  return getStore("fluxostore-uploads");
+  return blobStore("fluxostore-uploads");
 }
 
 async function readSeedJson(_key, fallback = []) {
