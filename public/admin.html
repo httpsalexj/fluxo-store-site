@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Painel administrativo da Fluxo Store.">
+  <title>Admin | Fluxo Store</title>
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="admin">
+  <header class="site-header admin-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Fluxo Store">
+        <img src="assets/img/logo.png" alt="Fluxo Store">
+        <span>FLUXO <span class="text-gold">STORE</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Menu admin">
+        <a href="index.html">Site</a>
+        <a class="active" href="admin.html">Admin</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="admin-orders.html">Pedidos</a>
+        <a href="admin-logs.html">Logs</a>
+      </nav>
+      <div class="admin-user">
+        <span id="admin-user-avatar" class="admin-avatar">A</span>
+        <span id="admin-user-name" class="admin-user-name">Admin</span>
+        <a class="btn btn-outline" href="/api/auth/logout">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="container">
+      <div class="section-header">
+        <div>
+          <h1>Painel Admin</h1>
+          <p>Gerencie os produtos exibidos na Fluxo Store.</p>
+        </div>
+        <div class="gold-line" aria-hidden="true"></div>
+      </div>
+
+      <div id="admin-stats" class="admin-stats"></div>
+
+      <div class="admin-toolbar">
+        <h2>Produtos</h2>
+        <a class="btn btn-gold" href="admin-product.html?id=novo">+ Novo Produto</a>
+      </div>
+
+      <div id="admin-products" class="card"></div>
+    </section>
+  </main>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

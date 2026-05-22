@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pedidos da Fluxo Store.">
+  <title>Pedidos | Fluxo Store</title>
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="admin-orders">
+  <header class="site-header admin-header">
+    <div class="container header-inner">
+      <a class="brand" href="admin.html" aria-label="Fluxo Store">
+        <img src="assets/img/logo.png" alt="Fluxo Store">
+        <span>FLUXO <span class="text-gold">STORE</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Menu admin">
+        <a href="index.html">Site</a>
+        <a href="admin.html">Produtos</a>
+        <a class="active" href="admin-orders.html">Pedidos</a>
+        <a href="admin-logs.html">Logs</a>
+      </nav>
+      <div class="admin-user">
+        <span id="admin-user-avatar" class="admin-avatar">A</span>
+        <span id="admin-user-name" class="admin-user-name">Admin</span>
+        <a class="btn btn-outline" href="/api/auth/logout">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="container">
+      <div class="section-header">
+        <div>
+          <h1>Pedidos</h1>
+          <p>Acompanhe os pagamentos Pix e os canais de entrega criados no Discord.</p>
+        </div>
+        <div class="section-actions"><button class="btn btn-outline" type="button" data-download-backup>Baixar backup</button><a class="btn btn-outline" href="admin-logs.html">Ver logs</a></div>
+      </div>
+      <div id="admin-order-stats" class="admin-stats"></div>
+      <div id="admin-orders" class="card"></div>
+    </section>
+  </main>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

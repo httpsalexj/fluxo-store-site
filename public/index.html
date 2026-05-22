@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fluxo Store — loja de confiança para o Fish World BR.">
+  <title>Fluxo Store | Fish World BR</title>
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Fluxo Store"><img src="assets/img/logo.png" alt="Fluxo Store"><span>FLUXO <span class="text-gold">STORE</span></span></a>
+      <nav class="main-nav" aria-label="Menu principal">
+        <a class="active" href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="#como-comprar">Como Comprar</a>
+        <a href="#suporte">Suporte</a>
+        <a href="auth.html">Admin</a>
+        <a class="cart-nav-link" href="carrinho.html">Carrinho <span data-cart-count hidden>0</span></a>
+      </nav>
+      <a class="btn btn-gold desktop-discord" data-discord target="_blank" rel="noreferrer">Entrar no Discord</a>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="index.html">Início</a><a href="produtos.html">Produtos</a><a href="#como-comprar">Como Comprar</a><a href="#suporte">Suporte</a><a href="auth.html">Admin</a><a href="carrinho.html">Carrinho <span data-cart-count hidden>0</span></a><a class="btn btn-gold" data-discord target="_blank" rel="noreferrer">Entrar no Discord</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <span class="badge">Fish World BR</span>
+        <h1>FLUXO <span class="text-gold">STORE</span></h1>
+        <p>Sua loja de confiança para o Fish World BR.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#produtos">Ver Produtos</a>
+          <a class="btn btn-outline" data-discord target="_blank" rel="noreferrer">Entrar no Discord</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="produtos" class="section">
+      <div class="container">
+        <div class="section-header"><div><h2>Vitrine</h2><p>Escolha o produto e adicione ao carrinho.</p></div><div class="gold-line" aria-hidden="true"></div></div>
+        <div id="home-products"></div>
+      </div>
+    </section>
+
+    <section id="como-comprar" class="section section-carded">
+      <div class="container">
+        <div class="section-header center"><h2>Como Comprar</h2><p>Compra automática com Pix e entrega via Discord</p></div>
+        <div class="steps-grid">
+          <article class="card hover-gold-glow"><div class="step-icon">🛒</div><div class="step-number">PASSO 1</div><h3>Escolha o produto</h3><p>Adicione os itens ao carrinho e confira o resumo da compra.</p></article>
+          <article class="card hover-gold-glow"><div class="step-icon">⚡</div><div class="step-number">PASSO 2</div><h3>Preencha e pague</h3><p>Informe seu ID do Discord e e-mail. Depois pague pelo QR Code Pix ou Pix copia e cola.</p></article>
+          <article class="card hover-gold-glow"><div class="step-icon">🎧</div><div class="step-number">PASSO 3</div><h3>Canal privado</h3><p>Após a confirmação do Mercado Pago, o bot cria um canal privado no Discord para a entrega.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header center"><h2>Por que a Fluxo Store?</h2></div>
+        <div class="benefits-grid">
+          <article class="card benefit-card hover-gold-glow"><div class="benefit-icon">🚚</div><h3>Entrega rápida</h3><p>Canal de entrega criado após a confirmação do Pix.</p></article>
+          <article class="card benefit-card hover-gold-glow"><div class="benefit-icon">💳</div><h3>Pix automático</h3><p>Pagamento por QR Code e Pix copia e cola pelo Mercado Pago.</p></article>
+          <article class="card benefit-card hover-gold-glow"><div class="benefit-icon">🛡️</div><h3>Loja segura</h3><p>Pedido registrado e conferência automática de pagamento.</p></article>
+          <article class="card benefit-card hover-gold-glow"><div class="benefit-icon">💬</div><h3>Atendimento Discord</h3><p>Tudo centralizado no servidor oficial da Fluxo Store.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="suporte" class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand"><img src="assets/img/logo.png" alt="Fluxo Store"><div><div class="footer-brand-title">FLUXO <span class="text-gold">STORE</span></div><p>Fluxo Store — Loja independente focada no servidor Fish World BR.</p></div></div>
+      <div><h4>Links</h4><ul><li><a data-discord target="_blank" rel="noreferrer">Discord</a></li><li><a href="carrinho.html">Carrinho</a></li><li><a href="termos.html">Termos</a></li><li><a href="auth.html">Admin</a></li></ul></div>
+      <div><h4>Atendimento</h4><p>O atendimento e a entrega acontecem em canal privado no Discord após a confirmação do pagamento.</p></div>
+    </div>
+    <div class="footer-bottom">© <span data-year></span> Fluxo Store. Não afiliada oficialmente ao Fish World BR.</div>
+  </footer>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "fluxo-store-netlify",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo Site pronto para Netlify",
+    "dev": "netlify dev",
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^9.0.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.38.1"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

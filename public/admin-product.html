@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastro de produto da Fluxo Store.">
+  <title>Produto Admin | Fluxo Store</title>
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="admin-product">
+  <header class="site-header admin-header">
+    <div class="container header-inner">
+      <a class="brand" href="admin.html" aria-label="Voltar ao painel">
+        <img src="assets/img/logo.png" alt="Fluxo Store">
+        <span>FLUXO <span class="text-gold">STORE</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Menu admin">
+        <a href="admin.html">Painel</a>
+        <a href="index.html">Site</a>
+        <a href="admin-orders.html">Pedidos</a>
+        <a href="admin-logs.html">Logs</a>
+      </nav>
+      <div class="admin-user">
+        <span id="admin-user-avatar" class="admin-avatar">A</span>
+        <span id="admin-user-name" class="admin-user-name">Admin</span>
+        <a class="btn btn-outline" href="/api/auth/logout">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="container admin-form-container">
+      <div class="section-header">
+        <div>
+          <h1 id="form-title">Produto</h1>
+          <p>Preencha as informações que aparecerão na vitrine.</p>
+        </div>
+        <div class="gold-line" aria-hidden="true"></div>
+      </div>
+
+      <form id="product-form" class="admin-form card">
+        <input type="hidden" id="product-id">
+
+        <div class="form-grid">
+          <label>
+            <span>Nome *</span>
+            <input id="name" required placeholder="Ex: Barco Premium">
+          </label>
+          <label>
+            <span>Preço (R$) *</span>
+            <input id="price" required type="number" min="0" step="0.01" value="0">
+          </label>
+        </div>
+
+        <label>
+          <span>Categoria</span>
+          <input id="category" placeholder="Ex: Fish World BR, VIP, Kits">
+        </label>
+
+        <label>
+          <span>Descrição curta</span>
+          <input id="shortDescription" maxlength="280" placeholder="Resumo rápido para aparecer no card">
+        </label>
+
+        <label>
+          <span>Descrição completa</span>
+          <textarea id="fullDescription" rows="7" placeholder="Detalhes do produto, entrega e observações"></textarea>
+        </label>
+
+        <div class="image-admin-box">
+          <div id="image-preview" class="image-preview">sem imagem</div>
+          <div class="image-fields">
+            <label>
+              <span>URL da imagem</span>
+              <input id="image" placeholder="Cole uma URL ou envie um arquivo abaixo">
+            </label>
+            <label class="upload-label">
+              <span>Enviar imagem local</span>
+              <input id="image-file" type="file" accept="image/*">
+            </label>
+            <small id="upload-status" class="text-muted">PNG, JPG, WEBP ou GIF até 5MB.</small>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <label class="check-card">
+            <input id="available" type="checkbox" checked>
+            <span>
+              <strong>Disponível</strong>
+              <small>Mostra o botão de comprar.</small>
+            </span>
+          </label>
+          <label class="check-card">
+            <input id="active" type="checkbox" checked>
+            <span>
+              <strong>Produto ativo</strong>
+              <small>Aparece na vitrine pública.</small>
+            </span>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <a class="btn btn-outline" href="admin.html">Cancelar</a>
+          <button id="save-button" class="btn btn-gold" type="submit">Salvar Produto</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
